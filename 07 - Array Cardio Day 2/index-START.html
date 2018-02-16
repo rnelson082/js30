@@ -26,15 +26,50 @@
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
-    // Array.prototype.every() // is everyone 19 or older?
-
-    // Array.prototype.find()
+    // var res = false
+    // people.forEach(e=> e.year < 1997 ? res = true : e)
+    // console.log(res)
+    // // Array.prototype.every() // is everyone 19 or older?
+    // res = true
+    // people.forEach(e=> e.year < 1997 ? res = false : e)
+    // console.log(res)
+    // // Array.prototype.find()
+    // var idToMatch = 823423
+    // var resObj = {}
+    // comments.forEach(e=>{
+    //   if (e.id === idToMatch){
+    //     resObj['text'] = e.text
+    //     resObj['id'] = e.id
+    //   }
+    //   return resObj
+    // });
+    //
+    // console.log(resObj);
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
 
     // Array.prototype.findIndex()
+    var idxToMatch = 3
+    var newResObj = {}
+    comments.forEach((e,i)=> {
+      if (i === idxToMatch){
+        newResObj['text'] = e.text
+        newResObj['id'] = e.id
+      }
+      return newResObj
+    });
+    console.table(newResObj)
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+    var idToMatch = 823423
+    var lastResObjs = {}
+    let res = comments.forEach(e=>{
+      if (e.id === idToMatch){
+        delete e
+      }
+      return e
+    });
+    console.log(res)
 
   </script>
 </body>
